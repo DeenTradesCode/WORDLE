@@ -1,3 +1,4 @@
+
 const { Wordle, GREEN, YELLOW, BLACK } = require("../classes/Wordle")
 
 describe("Wordle", () => {
@@ -40,19 +41,19 @@ describe("Wordle", () => {
     it('guess word has no repeated letters', () => {
       const wordle = new Wordle("alert");
       const result = wordle.letterRepeated("abcde", 0);
-      expect(result).toEqual(false); // 'a' is not repeated in "alert"
+      expect(result).toEqual(false); 
       });
     });
   
     it('guess word has repeated letters but only one exists in wordle', () => {
       const wordle = new Wordle("alert");
       const result = wordle.letterRepeated("abate", 2);
-      expect(result).toEqual(false); // 'a' is repeated in "abate", but only once in "alert"
+      expect(result).toEqual(false); 
     });
   
     it('guess word has repeated letters and exists multiple times in wordle', () => {
       const wordle = new Wordle("alert");
       const result = wordle.letterRepeated("abbab", 1); // Testing 'b' at index 1
-      expect(result).toEqual(true); // 'b' is repeated in both "alert" and "abbab"
+      expect(result).toEqual(true); 
     });
   });
